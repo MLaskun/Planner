@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import { MAX_VALUE_16BITS } from './android/gradle/wrapper/dists/gradle-6.0.1-all/99d3u8wxs16ndehh90lbbir67/gradle-6.0.1/docs/javadoc/jquery/jszip/dist/jszip';
 
 export default class App extends Component {
 
@@ -19,6 +20,8 @@ constructor(props) {
       items: {}
     };
   }
+
+
 
   render() {
     return (
@@ -62,6 +65,8 @@ constructor(props) {
     // console.log(`Load Items for ${day.year}-${day.month}`);
   }
 
+
+
   renderItem(item) {
     return (
       <View style={[styles.item, {height: item.height}]}><Text>{item.name}</Text></View>
@@ -82,7 +87,29 @@ constructor(props) {
     const date = new Date(time);
     return date.toISOString().split('T')[0];
   }
+
+
+    //dla usera śmierdziela dodawanie kurwa featurów
+
+
+let planner = [];
+const addItem = (ev)=>{
+  ev.preventDefault();
+  let planing = {
+
+    id: new Date(),
+    title: documentGetElementById('title').value,
+    hour: documentGetElementById('hour').value,
+  }
+  
+
+}}
+// KONIEC TEJ ZABAWY
+
+
 }
+
+
 
 const styles = StyleSheet.create({
   item: {
